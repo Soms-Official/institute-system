@@ -1,10 +1,7 @@
 package com.ggi.stu_mngmt.controller;
 
-import com.ggi.stu_mngmt.entity.Course;
 import com.ggi.stu_mngmt.entity.Student;
 import com.ggi.stu_mngmt.model.StudentDTO;
-import com.ggi.stu_mngmt.repository.CourseRepo;
-import com.ggi.stu_mngmt.repository.StudentRepo;
 import com.ggi.stu_mngmt.srvice.CourseService;
 import com.ggi.stu_mngmt.srvice.StudentService;
 import org.slf4j.Logger;

@@ -15,8 +15,8 @@ public class Course {
     private double fees;
     private int seats;
 
-    @OneToMany(mappedBy = "course")
-    private List<Student> students;
+//    @OneToMany(mappedBy = "course")
+//    private List<Student> students;
 
     // Getters & Setters
 
@@ -52,13 +52,13 @@ public class Course {
         this.seats = seats;
     }
 
-    public List<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
+//    public List<Student> getStudents() {
+//        return students;
+//    }
+//
+//    public void setStudents(List<Student> students) {
+//        this.students = students;
+//    }
 
     public String getCourseId() {
         return courseId;
@@ -71,12 +71,12 @@ public class Course {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Course course)) return false;
-        return Double.compare(fees, course.fees) == 0 && seats == course.seats && Objects.equals(courseId, course.courseId) && Objects.equals(courseName, course.courseName) && Objects.equals(duration, course.duration) && Objects.equals(students, course.students);
+        return Double.compare(fees, course.fees) == 0 && seats == course.seats && Objects.equals(courseId, course.courseId) && Objects.equals(courseName, course.courseName) && Objects.equals(duration, course.duration) ;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(courseId, courseName, duration, fees, seats, students);
+        return Objects.hash(courseId, courseName, duration, fees, seats);
     }
 
     @Override
@@ -87,7 +87,6 @@ public class Course {
                 ", duration='" + duration + '\'' +
                 ", fees=" + fees +
                 ", seats=" + seats +
-                ", students=" + students +
                 '}';
     }
 }

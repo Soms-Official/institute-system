@@ -1,21 +1,24 @@
 package com.ggi.stu_mngmt.entity;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+
 
 import java.util.Objects;
 
 @Entity
-@Getter
-@Setter
+
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String teacherId;
     private String name;
-    private String subject;
+    private String address;
+    private String doj;
     private String email;
-
+    private String qualification;
+    private String role;
+    private String dept;
+    private String mobile;
     // Getters & Setters
 
     public Long getId() {
@@ -26,6 +29,13 @@ public class Teacher {
         this.id = id;
     }
 
+    public String getTeacherId() {
+        return teacherId;
+    }
+    public void setTeacherId(String teacherId) {
+        this.teacherId = teacherId;
+    }
+
     public String getName() {
         return name;
     }
@@ -34,12 +44,19 @@ public class Teacher {
         this.name = name;
     }
 
-    public String getSubject() {
-        return subject;
+    public String getAddress() {
+        return address;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public String getDoj() {
+        return doj;
+    }
+
+    public void setDoj(String doj) {
+        this.doj = doj;
     }
 
     public String getEmail() {
@@ -50,24 +67,32 @@ public class Teacher {
         this.email = email;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Teacher teacher)) return false;
-        return Objects.equals(id, teacher.id) && Objects.equals(name, teacher.name) && Objects.equals(subject, teacher.subject) && Objects.equals(email, teacher.email);
+    public String getQualification() {
+        return qualification;
+    }
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, subject, email);
+    public String getRole() {
+        return role;
     }
 
-    @Override
-    public String toString() {
-        return "Teacher{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", subject='" + subject + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getDept() {
+        return dept;
+    }
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 }

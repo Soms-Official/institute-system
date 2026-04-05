@@ -1,14 +1,11 @@
 package com.ggi.stu_mngmt.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.*;
 
 @Entity
-@Getter
-@Setter
+
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +21,7 @@ public class Student {
     @JoinColumn(name = "course_id")
     private Course course;
 
+    private Integer semYear;
     private double totalFees;
     private double remainingFees;
 
@@ -93,6 +91,12 @@ public class Student {
         this.course = course;
     }
 
+    public Integer getSemYear() {
+        return semYear;
+    }
+    public void setSemYear(Integer semYear) {
+        this.semYear = semYear;
+    }
     public double getTotalFees() {
         return totalFees;
     }
@@ -124,13 +128,13 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", roll='" + roll + '\'' +
-                ", name='" + name + '\'' +
-                ", dob='" + dob + '\'' +
-                ", address='" + address + '\'' +
-                ", email='" + email + '\'' +
-                ", mobile='" + mobile + '\'' +
-                ", course=" + course +
+                ", roll='" + roll +
+                ", name='" + name +
+                ", dob='" + dob +
+                ", address='" + address +
+                ", email='" + email +
+                ", mobile='" + mobile +
+                ", course=" + course.getCourseName() +
                 ", totalFees=" + totalFees +
                 ", remainingFees=" + remainingFees +
                 '}';
